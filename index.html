@@ -11,10 +11,41 @@
   <input type="text" id="b">*x+ 
  
   <input type="text" id="c">=0
-  <button> resolve</button>
+  <button onclick="resolve()">resolve</button>
+  <p id="p"></p>
+
+
+<script>
+function resolve(){
+    let a=document.getElementById("a").value;
+    let b=document.getElementById("b").value;
+    let c=document.getElementById("c").value;
+    let delta=b**2-4*a*c;
+    if (delta >0){
+
+        x1=(-b+Math.sqrt(delta))/2*a;
+        x2=(-b-Math.sqrt(delta))/2*a;
+        document.getElementById("p").innerHTML="x1="+x1 + "x2="+x2;
+    }
+    else if(delta==0){
+        x1=(-b)/2*a;
+        document.getElementById("p").innerHTML="x1="+x1;
+
+    }
+    else{
+        document.getElementById("p").innerHTML="impossible to resolve"
+
+        
+    }
+   
+    
+
+
+}
 
 
 
+</script>
 
 </body>
 </html>
